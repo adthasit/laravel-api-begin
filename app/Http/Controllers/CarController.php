@@ -29,8 +29,8 @@ class CarController extends Controller
     }
 
     //GET ONE
-    public function show($id){
-        $car = Car::where('id', $id)
+    public function show($carId){
+        $car = Car::where('id', $carId)
             ->first();
 
         return response()->json($car);
@@ -41,9 +41,9 @@ class CarController extends Controller
     }
     
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $carId){
         $doc = $request->all();
-        Car::where('id', $id)
+        Car::where('id', $carId)
             ->update($doc);
 
         return response()->json("success");
