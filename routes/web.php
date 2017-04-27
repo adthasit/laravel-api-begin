@@ -7,6 +7,8 @@ Route::get('/', function () {
 Route::group(['prefix' => 'api/v1'], function () {
     //use this router instead to make it efficience
     Route::resource('car', 'CarController');
+
+    Route::resource('car.comment', 'CommentController');
 });
 
 
