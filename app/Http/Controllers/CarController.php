@@ -28,8 +28,25 @@ class CarController extends Controller
 
     }
 
+    //GET ONE
+    public function show($id){
+        $car = Car::where('id', $id)
+            ->first();
+
+        return response()->json($car);
+    }
+
     public function store(Request $request){
-      Car::create($request->all());
+        Car::create($request->all());
+    }
+    
+
+    public function update(Request $request, $id){
+        $doc = $request->all();
+        Car::where('id', $id)
+            ->update($doc);
+
+        return response()->json("success");
     }
 
 }
