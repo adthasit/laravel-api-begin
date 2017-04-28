@@ -20,6 +20,7 @@ class CreateCarsTable extends Migration
             $table->string('year');
             $table->text('description');
             $table->integer('vote');
+            $table->text('image');
             $table->timestamps();
         });
     }
