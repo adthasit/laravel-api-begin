@@ -12,6 +12,8 @@ class CommentController extends Controller
     public function index(Request $request, $carId){
         $comment = Comment::where('carId', $carId)
             ->get();
+
+        return $comment;
     }
 
     //POST
